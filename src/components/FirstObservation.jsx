@@ -1,9 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { observeStart, observeDrop, observeCorpusText } from '../api/habitat';
 
 const CORPUS = 'romeo-juliet';
+const DEMO_ENABLED = false;
+const BG_COLORS = ['#2b2c30', '#922e39', '#8f657b', '#375c67', '#646667'];
 
 export default function FirstObservation() {
+  const bgColor = useMemo(() => BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)], []);
   const [corpusText, setCorpusText] = useState(null);
   const [corpusTitle, setCorpusTitle] = useState(null);
   const [observeResult, setObserveResult] = useState(null);
@@ -14,6 +17,7 @@ export default function FirstObservation() {
   const startPromise = useRef(null);
 
   useEffect(() => {
+    if (!DEMO_ENABLED) return;
     observeCorpusText(CORPUS).then(r => {
       setCorpusText(r.text);
       setCorpusTitle(r.title || null);
@@ -75,40 +79,42 @@ export default function FirstObservation() {
             It does not predict, recommend, or complete. It measures, and it hands the measurement back to you.
           </p>
         </div>
-        <div className="fo-caret" onClick={handleCaretClick}>∨</div>
+        {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
       </section>
 
-      {/* Panel 2 — Prologue + Button */}
-      <section className="fo-panel fo-demo">
-        <div className="fo-demo-inner">
-          {corpusText && (
-            <>
-              {corpusTitle && <p className="fo-title">{corpusTitle}</p>}
-              <p className="fo-prologue">{corpusText}</p>
-            </>
-          )}
+      {/* Panel 2 — Prologue + Button (disabled until DEMO_ENABLED) */}
+      {DEMO_ENABLED && (
+        <section className="fo-panel fo-demo">
+          <div className="fo-demo-inner">
+            {corpusText && (
+              <>
+                {corpusTitle && <p className="fo-title">{corpusTitle}</p>}
+                <p className="fo-prologue">{corpusText}</p>
+              </>
+            )}
 
-          {!observeResult && corpusText && !observing && (
-            <button className="fo-btn" onClick={handleObserve}>
-              Send to Habitat
-            </button>
-          )}
+            {!observeResult && corpusText && !observing && (
+              <button className="fo-btn" onClick={handleObserve}>
+                Send to Habitat
+              </button>
+            )}
 
-          {observing && (
-            <p className="fo-loading">Composing…</p>
-          )}
+            {observing && (
+              <p className="fo-loading">Composing…</p>
+            )}
 
-          {observeError && (
-            <p className="fo-error">{observeError}</p>
+            {observeError && (
+              <p className="fo-error">{observeError}</p>
+            )}
+          </div>
+          {observeResult && (
+            <div className="fo-caret fo-caret-demo" onClick={() => { if (scrollRef.current && replyRef.current) scrollRef.current.scrollTo({ top: replyRef.current.offsetTop, behavior: 'smooth' }); }}>∨</div>
           )}
-        </div>
-        {observeResult && (
-          <div className="fo-caret fo-caret-demo" onClick={() => { if (scrollRef.current && replyRef.current) scrollRef.current.scrollTo({ top: replyRef.current.offsetTop, behavior: 'smooth' }); }}>∨</div>
-        )}
-      </section>
+        </section>
+      )}
 
-      {/* Panel 3 — Reply (unsnapped, natural height) */}
-      {observeResult && (
+      {/* Panel 3 — Reply (disabled until DEMO_ENABLED) */}
+      {DEMO_ENABLED && observeResult && (
         <section className="fo-reply-panel" ref={replyRef}>
           <div className="fo-reply-inner">
             <div className="fo-reply fade-in">
@@ -116,7 +122,7 @@ export default function FirstObservation() {
               <ul className="fo-couplings">
                 {observeResult.couplings?.map((c, i) => (
                   <li key={i} className="fo-coupling">
-                    {c.actor} – {c.assertion}  .{String(c.magnitude).replace('0.', '')}
+                    {c.actor} – {c.assertion}  .{String(Number(c.magnitude).toFixed(3)).replace(/^0\./, '')}
                   </li>
                 ))}
               </ul>
@@ -129,7 +135,6 @@ export default function FirstObservation() {
       )}
 
       <style>{`
-        /* ===== Scroll container ===== */
         .fo-scroll {
           position: fixed;
           top: 0;
@@ -138,9 +143,9 @@ export default function FirstObservation() {
           bottom: 0;
           overflow-y: auto;
           scroll-behavior: smooth;
+          background: ${bgColor};
         }
 
-        /* ===== Panel base ===== */
         .fo-panel {
           height: 100vh;
           display: flex;
@@ -152,7 +157,6 @@ export default function FirstObservation() {
           overflow: hidden;
         }
 
-        /* ===== Panel 1: Hero statement ===== */
         .fo-statement {
           max-width: 620px;
           padding: 0 32px;
@@ -204,7 +208,6 @@ export default function FirstObservation() {
           50% { opacity: 0.6; }
         }
 
-        /* ===== Panel 2: Prologue ===== */
         .fo-demo-inner {
           max-width: 620px;
           padding: 0 32px;
@@ -248,7 +251,6 @@ export default function FirstObservation() {
           background: rgba(220, 208, 191, 0.06);
         }
 
-        /* ===== Panel 3: Reply (no snap, natural height) ===== */
         .fo-reply-panel {
           display: flex;
           justify-content: center;
@@ -260,8 +262,6 @@ export default function FirstObservation() {
           padding: 0 32px;
           width: 100%;
         }
-
-        /* ===== Reply box ===== */
         .fo-reply {
           margin: 0 0 4em;
           padding: 1.4em 1.6em;
@@ -325,7 +325,6 @@ export default function FirstObservation() {
           margin: 2em 0;
         }
 
-        /* ===== Responsive ===== */
         @media (max-width: 768px) {
           .fo-statement { padding: 0 20px; }
           .fo-demo-inner { padding: 0 20px; }
