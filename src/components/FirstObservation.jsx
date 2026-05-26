@@ -174,10 +174,10 @@ export default function FirstObservation() {
         }
         .fo-body {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.05rem;
+          font-size: 1.2rem;
           font-weight: 400;
           line-height: 1.7;
-          color: #dcd0bf;
+          color: #d4cfc8;
           margin: 0 0 1.4em;
         }
         .fo-link {
@@ -330,7 +330,7 @@ export default function FirstObservation() {
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
           .fo-lede { font-size: 1.45rem; }
-          .fo-body { font-size: 1rem; }
+          .fo-body { font-size: 1.1rem; }
           .fo-prologue { font-size: 1rem; }
           .fo-reply-text { font-size: 1rem; }
         }
@@ -339,7 +339,7 @@ export default function FirstObservation() {
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
           .fo-lede { font-size: 1.3rem; }
-          .fo-body { font-size: 0.95rem; }
+          .fo-body { font-size: 1.05rem; }
           .fo-prologue { font-size: 0.95rem; }
           .fo-reply-text { font-size: 0.95rem; }
           .fo-reply { padding: 1em 1.1em; }
