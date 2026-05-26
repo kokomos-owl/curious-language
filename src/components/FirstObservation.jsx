@@ -3,7 +3,7 @@ import { observeStart, observeDrop, observeCorpusText } from '../api/habitat';
 
 const CORPUS = 'romeo-juliet';
 const DEMO_ENABLED = false;
-const BG_COLORS = ['#1e1f22', '#6b2129', '#6b4a5b', '#26424b', '#4a4b4c'];
+const BG_COLORS = ['#1e1f22', '#6b2129', '#26424b'];
 
 export default function FirstObservation() {
   const bgColor = useMemo(() => BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)], []);
