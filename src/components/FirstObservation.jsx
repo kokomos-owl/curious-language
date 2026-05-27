@@ -73,7 +73,7 @@ export default function FirstObservation() {
             That decision is useful, and it is also the moment your words stop being yours.
           </p>
           <p className="fo-body">
-            We built an <a href="https://habitat.ooo/" className="fo-link">instrument</a> that does not convert.
+            We built an instrument that does not convert.
             It reads the structure a piece of writing already has and returns it, without turning it into an outcome.
             It is non-generative.
             It does not predict, recommend, or complete. It measures, and it hands the measurement back to you.
