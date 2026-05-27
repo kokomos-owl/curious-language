@@ -81,7 +81,7 @@ export default function FirstObservation() {
         </div>
         {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
         <footer className="fo-footer">
-          <p>Curious Company, LLC · We measure the unsaid. © 2026</p>
+          <p>Curious Company, LLC · We measure what language leaves unsaid. © 2026</p>
         </footer>
       </section>
 
