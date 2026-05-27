@@ -81,7 +81,7 @@ export default function FirstObservation() {
         </div>
         {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
         <footer className="fo-footer">
-          <p>Curious Company, LLC · We measure what language leaves unsaid. © 2026</p>
+          <p>Curious Company, LLC © 2026</p>
         </footer>
       </section>
 
@@ -331,7 +331,8 @@ export default function FirstObservation() {
         .fo-footer {
           position: absolute;
           bottom: 32px;
-          left: 32px;
+          left: 0;
+          padding-left: 32px;
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 0.7rem;
           color: #3e3c3b;
@@ -343,6 +344,7 @@ export default function FirstObservation() {
 
         @media (max-width: 768px) {
           .fo-statement { padding: 0 20px; }
+          .fo-footer { padding-left: 20px; }
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
           .fo-lede { font-size: 1.45rem; }
@@ -352,6 +354,7 @@ export default function FirstObservation() {
         }
         @media (max-width: 480px) {
           .fo-statement { padding: 0 16px; }
+          .fo-footer { padding-left: 16px; }
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
           .fo-lede { font-size: 1.3rem; }
