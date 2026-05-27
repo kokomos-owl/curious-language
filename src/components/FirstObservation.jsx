@@ -81,8 +81,7 @@ export default function FirstObservation() {
         </div>
         {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
         <footer className="fo-footer">
-          <p>Curious Company, LLC</p>
-          <p>We measure the unsaid. © 2026</p>
+          <p>Curious Company, LLC · We measure the unsaid. © 2026</p>
         </footer>
       </section>
 
@@ -181,7 +180,7 @@ export default function FirstObservation() {
           font-size: 1.2rem;
           font-weight: 400;
           line-height: 1.7;
-          color: #3e3c3b;
+          color: #aca59b;
           margin: 0 0 1.4em;
         }
         .fo-link {
@@ -331,13 +330,11 @@ export default function FirstObservation() {
 
         .fo-footer {
           position: absolute;
-          bottom: 12px;
-          left: 50%;
-          transform: translateX(-50%);
-          text-align: center;
+          bottom: 32px;
+          left: 32px;
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 0.7rem;
-          color: #979592;
+          color: #3e3c3b;
           line-height: 1.6;
         }
         .fo-footer p {
