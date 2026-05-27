@@ -331,7 +331,7 @@ export default function FirstObservation() {
 
         .fo-footer {
           position: absolute;
-          bottom: 32px;
+          bottom: 12px;
           left: 50%;
           transform: translateX(-50%);
           text-align: center;
