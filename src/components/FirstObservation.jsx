@@ -64,7 +64,7 @@ export default function FirstObservation() {
       <section className="fo-panel fo-hero">
         <div className="fo-statement">
           <p className="fo-lede">
-            We measure what language leaves unsaid.
+            We measure what language says, implies, and leaves unsaid.
           </p>
           <p className="fo-body">
             Most systems that read language convert it.
