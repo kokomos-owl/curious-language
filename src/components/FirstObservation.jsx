@@ -3,7 +3,7 @@ import { observeStart, observeDrop, observeCorpusText } from '../api/habitat';
 
 const CORPUS = 'romeo-juliet';
 const DEMO_ENABLED = false;
-const BG_COLORS = ['#1a1b1f'];
+const BG_COLORS = ['#ffffff'];
 
 export default function FirstObservation() {
   const bgColor = useMemo(() => BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)], []);
@@ -139,7 +139,8 @@ export default function FirstObservation() {
           bottom: 0;
           overflow-y: auto;
           scroll-behavior: smooth;
-          background: ${bgColor};
+          background: ${bgColor} url('/manifold.jpg') no-repeat center center;
+          background-size: cover;
         }
 
         .fo-panel {
@@ -165,7 +166,7 @@ export default function FirstObservation() {
           font-size: 1.65rem;
           font-weight: 400;
           line-height: 1.45;
-          color: #dcd0bf;
+          color: #232a2d;
           margin: 0 0 1.8em;
         }
         .fo-body {
@@ -173,7 +174,7 @@ export default function FirstObservation() {
           font-size: 1.2rem;
           font-weight: 400;
           line-height: 1.7;
-          color: #aca59b;
+          color: #3d301d;
           margin: 0 0 1.4em;
         }
         .fo-link {
@@ -333,6 +334,7 @@ export default function FirstObservation() {
         }
         .fo-footer p {
           margin: 0;
+          color: #232a2d80;
         }
 
         @media (max-width: 768px) {
