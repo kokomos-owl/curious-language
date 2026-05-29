@@ -72,7 +72,8 @@ export default function FirstObservation() {
             It measures, and it hands the measurement back to you.
           </p>
           <p className="fo-body">
-            The following is an expression borne out of Habitat. It was not a target:
+            The following was not a target. It emerged and can be geometrically represented:
+            <br />
             Habitat measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold in meeting another.
           </p>
         </div>
