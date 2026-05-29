@@ -93,7 +93,7 @@ export default function FirstObservation() {
             </p>
           </div>
           <div className="fo-asterisk">
-            Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it is a &ldquo;chart-on-manifold&rdquo; structure that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold in meeting another.
+            Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it has a &ldquo;chart-on-manifold&rdquo; structure that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold.
           </div>
           <p className="fo-lede-note">
             The image, &ldquo;GLORIA&rdquo;, can be seen as a manifold, or laundry tumbling in a dryer, or language.
