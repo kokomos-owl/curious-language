@@ -265,7 +265,7 @@ export default function FirstObservation() {
 
         .fo-body {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           font-weight: 400;
           line-height: 1.5;
           color: #3d301d;
