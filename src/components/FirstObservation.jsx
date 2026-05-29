@@ -240,7 +240,7 @@ export default function FirstObservation() {
           font-weight: 400;
           line-height: 1.4;
           color: #232a2d80;
-          margin: 0;
+          margin: 0 0 4em 0;
         }
 
         .fo-statement {
