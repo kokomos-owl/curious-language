@@ -87,6 +87,10 @@ export default function FirstObservation() {
               Habitat is non-generative. It does not predict, recommend, or complete.
               It measures, and it hands the measurement back to you.
             </p>
+            <p className="fo-body">
+              More, Habitat sequesters language models. Your words are never shown.
+              This means you can work with models knowing your words are yours and not training data.
+            </p>
           </div>
           <div className="fo-asterisk">
             Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it is a &ldquo;chart-on-manifold&rdquo; structure that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold in meeting another.
@@ -455,7 +459,7 @@ export default function FirstObservation() {
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
           .fo-lede { font-size: 1.45rem; }
-          .fo-body { font-size: 1.1rem; }
+          .fo-body { font-size: 1.2rem; }
           .fo-prologue { font-size: 1rem; }
           .fo-reply-text { font-size: 1rem; }
         }
@@ -466,7 +470,7 @@ export default function FirstObservation() {
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
           .fo-lede { font-size: 1.3rem; }
-          .fo-body { font-size: 1.05rem; }
+          .fo-body { font-size: 1.15rem; }
           .fo-prologue { font-size: 0.95rem; }
           .fo-reply-text { font-size: 0.95rem; }
           .fo-reply { padding: 1em 1.1em; }
