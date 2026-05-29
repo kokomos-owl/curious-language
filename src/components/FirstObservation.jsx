@@ -60,19 +60,24 @@ export default function FirstObservation() {
 
   return (
     <div className="fo-scroll" ref={scrollRef}>
+      {/* Wordmark */}
+      <div className="fo-wordmark">Curious</div>
+
       {/* Panel 1 — Statement */}
       <section className="fo-panel fo-hero">
         <div className="fo-content">
-          <figure className="fo-figure">
-            <img className="fo-hero-img" src="/manifold.jpg" alt="GLORIA, cut-outs on board, Todd Colby, 2023" />
-            <figcaption className="fo-caption">
-              "GLORIA", cut-outs on board, Todd Colby. 2023.*
-            </figcaption>
-          </figure>
-          <div className="fo-statement">
+          <div className="fo-hero-row">
+            <figure className="fo-figure">
+              <img className="fo-hero-img" src="/manifold.jpg" alt="GLORIA, cut-outs on board, 16 x 20, Todd Colby, 2023" />
+              <figcaption className="fo-caption">
+                &ldquo;GLORIA&rdquo;, cut-outs on board, 16&quot; x 20&quot;, Todd Colby. 2023.*
+              </figcaption>
+            </figure>
             <p className="fo-lede">
               Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
             </p>
+          </div>
+          <div className="fo-statement">
             <p className="fo-body">
               To do this, we built an instrument called Habitat.
               Habitat is non-generative. It does not predict, recommend, or complete.
@@ -153,6 +158,18 @@ export default function FirstObservation() {
           background: ${bgColor};
         }
 
+        .fo-wordmark {
+          position: fixed;
+          top: 24px;
+          left: 32px;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: #232a2d;
+          letter-spacing: 0.02em;
+          z-index: 10;
+        }
+
         .fo-panel {
           min-height: 100vh;
           display: flex;
@@ -161,22 +178,31 @@ export default function FirstObservation() {
           justify-content: center;
           position: relative;
           box-sizing: border-box;
-          padding: 64px 0 80px;
+          padding: 80px 0;
         }
 
         .fo-content {
-          max-width: 620px;
+          max-width: 720px;
           width: 100%;
           padding: 0 32px;
           box-sizing: border-box;
         }
 
+        .fo-hero-row {
+          display: flex;
+          align-items: flex-start;
+          gap: 2.4em;
+          margin: 0 0 2em;
+        }
+
         .fo-figure {
-          margin: 0 0 2.4em;
+          flex: 0 0 48%;
+          margin: 0;
         }
         .fo-hero-img {
           width: 100%;
           display: block;
+          border: 1px solid rgba(0, 0, 0, 0.1);
           border-radius: 2px;
         }
         .fo-caption {
@@ -187,36 +213,38 @@ export default function FirstObservation() {
           text-align: left;
         }
 
+        .fo-lede {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 1.65rem;
+          font-weight: 400;
+          line-height: 1.35;
+          color: #232a2d;
+          margin: 0 0 1.4em;
+          flex: 1;
+        }
+
         .fo-statement {
-          max-width: 620px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+        }
+
+        .fo-body {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 1.2rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #3d301d;
+          margin: 0 0 1.4em;
         }
 
         .fo-asterisk {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 0.9rem;
           font-weight: 400;
-          line-height: 1.6;
+          line-height: 1.4;
           color: #232a2d80;
-          margin: 2em 0 0;
-        }
-        .fo-lede {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.65rem;
-          font-weight: 400;
-          line-height: 1.45;
-          color: #232a2d;
-          margin: 0 0 1.8em;
-        }
-        .fo-body {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.2rem;
-          font-weight: 400;
-          line-height: 1.7;
-          color: #3d301d;
-          margin: 0 0 1.4em;
+          margin: 2em 0 4em;
         }
         .fo-link {
           color: #bfdcce;
@@ -379,7 +407,16 @@ export default function FirstObservation() {
         }
 
         @media (max-width: 768px) {
+          .fo-hero-row {
+            flex-direction: column;
+            gap: 1.6em;
+          }
+          .fo-figure {
+            flex: none;
+            width: 100%;
+          }
           .fo-content { padding: 0 20px; }
+          .fo-wordmark { left: 20px; }
           .fo-footer { padding-left: 20px; }
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
@@ -390,6 +427,7 @@ export default function FirstObservation() {
         }
         @media (max-width: 480px) {
           .fo-content { padding: 0 16px; }
+          .fo-wordmark { left: 16px; }
           .fo-footer { padding-left: 16px; }
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
