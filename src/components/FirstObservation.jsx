@@ -139,8 +139,7 @@ export default function FirstObservation() {
           bottom: 0;
           overflow-y: auto;
           scroll-behavior: smooth;
-          background: ${bgColor} url('/manifold.jpg') no-repeat center center;
-          background-size: cover;
+          background: ${bgColor};
         }
 
         .fo-panel {
@@ -160,6 +159,10 @@ export default function FirstObservation() {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          background: url('/manifold.jpg') no-repeat center center;
+          background-size: cover;
+          border-radius: 4px;
+          padding: 48px 32px;
         }
         .fo-lede {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
