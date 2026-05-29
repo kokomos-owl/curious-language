@@ -225,11 +225,11 @@ export default function FirstObservation() {
           border-radius: 2px;
         }
         .fo-caption {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
           font-size: 0.7rem;
           color: #232a2d80;
           margin: 0.6em 0 0;
-          text-align: left;
+          text-align: right;
         }
 
         .fo-lede-block {
@@ -278,7 +278,7 @@ export default function FirstObservation() {
           font-weight: 400;
           line-height: 1.4;
           color: #232a2d80;
-          margin: 2em 0 4em;
+          margin: 2em 0 2em;
         }
         .fo-link {
           color: #bfdcce;
