@@ -242,7 +242,7 @@ export default function FirstObservation() {
         .fo-lede {
           font-family: "EB Garamond", Georgia, "Times New Roman", serif;
           font-size: 1.9rem;
-          font-weight: 400;
+          font-weight: 500;
           line-height: 1.25;
           color: #232a2d;
           margin: 0 0 0em;
