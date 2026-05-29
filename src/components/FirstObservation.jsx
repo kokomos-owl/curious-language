@@ -69,17 +69,17 @@ export default function FirstObservation() {
       <section className="fo-panel fo-hero">
         <div className="fo-content">
           <div className="fo-hero-row">
+            <div className="fo-lede-block">
+              <p className="fo-lede">
+                Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
+              </p>
+            </div>
             <figure className="fo-figure">
               <img className="fo-hero-img" src="/manifold.jpg" alt="GLORIA, cut-outs on board, 16 x 20, Todd Colby, 2023" />
               <figcaption className="fo-caption">
                 &ldquo;GLORIA&rdquo;, cut-outs on board, 16&quot; x 20&quot;, Todd Colby. 2023.*
               </figcaption>
             </figure>
-            <div className="fo-lede-block">
-              <p className="fo-lede">
-                Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
-              </p>
-            </div>
           </div>
           <div className="fo-statement">
             <p className="fo-body">
