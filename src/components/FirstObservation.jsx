@@ -193,7 +193,11 @@ export default function FirstObservation() {
           justify-content: center;
           position: relative;
           box-sizing: border-box;
-          padding: 140px 0 80px;
+          padding: 80px 0;
+        }
+
+        .fo-hero {
+          padding-top: 140px;
         }
 
         .fo-content {
