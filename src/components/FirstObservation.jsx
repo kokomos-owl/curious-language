@@ -155,7 +155,6 @@ export default function FirstObservation() {
 
         .fo-statement {
           max-width: 620px;
-          padding: 0 32px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
