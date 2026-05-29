@@ -195,9 +195,9 @@ export default function FirstObservation() {
 
         .fo-hero-row {
           display: flex;
-          align-items: flex-start;
+          align-items: center;
           gap: 2.4em;
-          margin: 0 0 2em;
+          margin: 0 0 3.5em;
         }
 
         .fo-figure {
@@ -240,7 +240,7 @@ export default function FirstObservation() {
           font-weight: 400;
           line-height: 1.4;
           color: #232a2d80;
-          margin: 0;
+          margin: 0 0 1.5rem 5rem;
         }
 
         .fo-statement {
