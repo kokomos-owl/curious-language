@@ -77,9 +77,6 @@ export default function FirstObservation() {
               <p className="fo-lede">
                 Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
               </p>
-              <p className="fo-lede-note">
-                The image, &ldquo;GLORIA&rdquo;, can be seen as a manifold, or laundry tumbling in a dryer, or language.
-              </p>
             </div>
           </div>
           <div className="fo-statement">
@@ -92,6 +89,9 @@ export default function FirstObservation() {
           <div className="fo-asterisk">
             Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it is a &ldquo;chart-on-manifold&rdquo; structure that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold in meeting another.
           </div>
+          <p className="fo-lede-note">
+            The image, &ldquo;GLORIA&rdquo;, can be seen as a manifold, or laundry tumbling in a dryer, or language.
+          </p>
         </div>
         {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
         <footer className="fo-footer">
@@ -240,7 +240,7 @@ export default function FirstObservation() {
           font-weight: 400;
           line-height: 1.4;
           color: #232a2d80;
-          margin: 0 0 1.5rem 5rem;
+          margin: 0;
         }
 
         .fo-statement {
