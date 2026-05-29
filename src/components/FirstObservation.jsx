@@ -240,8 +240,8 @@ export default function FirstObservation() {
         }
 
         .fo-lede {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.65rem;
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+          font-size: 1.9rem;
           font-weight: 400;
           line-height: 1.35;
           color: #232a2d;
