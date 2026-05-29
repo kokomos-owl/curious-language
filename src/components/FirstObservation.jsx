@@ -89,7 +89,7 @@ export default function FirstObservation() {
             </p>
             <p className="fo-body">
               More, Habitat sequesters language models. Your words are never shown.
-              This means you can work with models knowing your words are yours and not training data.
+              This means you can work with models knowing your words remain yours. They're not training data.
             </p>
           </div>
           <div className="fo-asterisk">
