@@ -73,9 +73,14 @@ export default function FirstObservation() {
                 &ldquo;GLORIA&rdquo;, cut-outs on board, 16&quot; x 20&quot;, Todd Colby. 2023.*
               </figcaption>
             </figure>
-            <p className="fo-lede">
-              Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
-            </p>
+            <div className="fo-lede-block">
+              <p className="fo-lede">
+                Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
+              </p>
+              <p className="fo-lede-note">
+                The image, &ldquo;GLORIA&rdquo;, can be seen as a manifold, or laundry tumbling in a dryer, or language.
+              </p>
+            </div>
           </div>
           <div className="fo-statement">
             <p className="fo-body">
@@ -163,10 +168,10 @@ export default function FirstObservation() {
           top: 24px;
           left: 32px;
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 0.85rem;
-          font-weight: 500;
+          font-size: 1.25rem;
+          font-weight: 400;
           color: #232a2d;
-          letter-spacing: 0.02em;
+          letter-spacing: 0.01em;
           z-index: 10;
         }
 
@@ -213,6 +218,13 @@ export default function FirstObservation() {
           text-align: left;
         }
 
+        .fo-lede-block {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
         .fo-lede {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 1.65rem;
@@ -220,7 +232,15 @@ export default function FirstObservation() {
           line-height: 1.35;
           color: #232a2d;
           margin: 0 0 1.4em;
-          flex: 1;
+        }
+
+        .fo-lede-note {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.9rem;
+          font-weight: 400;
+          line-height: 1.4;
+          color: #232a2d80;
+          margin: 0;
         }
 
         .fo-statement {
