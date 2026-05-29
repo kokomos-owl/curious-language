@@ -88,7 +88,7 @@ export default function FirstObservation() {
               It measures, and it hands the measurement back to you.
             </p>
             <p className="fo-body">
-              More, Habitat sequesters agents and language models. Your words are never shown.
+              Habitat sequesters agents and language models. Your words are never shown.
               This means you can work with models knowing your words remain your own. They're not training data.
             </p>
           </div>
