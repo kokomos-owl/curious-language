@@ -64,19 +64,19 @@ export default function FirstObservation() {
       <section className="fo-panel fo-hero">
         <div className="fo-statement">
           <p className="fo-lede">
-            We measure relationships in language that articulate what's said, implied, kindred, and unspoken.
+            Our measurements of language reveal what's said, implied, and unspoken.
           </p>
           <p className="fo-body">
             Most systems read language by converting it.
-            They turn what they find into a prediction, a label, a generated reply.
-            To do that, a system has to stand outside your language and decide what your words were for.
-            That decision is useful, and it is also the moment your words stop being yours.
+            They turn what they find into a prediction.
+            Those systems stand outside your language and decide what your words were for.
+            That decision can be useful. It's always the moment your words stop being yours.
           </p>
           <p className="fo-body">
             We built an instrument that only measures relationships.
-            It reads the structure a piece of writing already has and returns it, without turning it into an outcome.
-            It is non-generative.
-            It does not predict, recommend, or complete. It measures, and it hands the measurement back to you.
+            It reads the structure of writing and returns it, without turning it into an outcome.
+            It is non-generative. It does not predict, recommend, or complete.
+            It measures, and it hands the measurement back to you.
           </p>
         </div>
         {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
