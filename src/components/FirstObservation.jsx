@@ -62,15 +62,26 @@ export default function FirstObservation() {
     <div className="fo-scroll" ref={scrollRef}>
       {/* Panel 1 — Statement */}
       <section className="fo-panel fo-hero">
-        <div className="fo-statement">
-          <p className="fo-lede">
-            Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
-          </p>
-          <p className="fo-body">
-            To do this, we built an instrument called Habitat.
-            Habitat is non-generative. It does not predict, recommend, or complete.
-            It measures, and it hands the measurement back to you.
-          </p>
+        <div className="fo-content">
+          <figure className="fo-figure">
+            <img className="fo-hero-img" src="/manifold.jpg" alt="GLORIA, cut-outs on board, Todd Colby, 2023" />
+            <figcaption className="fo-caption">
+              "GLORIA", cut-outs on board, Todd Colby. 2023.*
+            </figcaption>
+          </figure>
+          <div className="fo-statement">
+            <p className="fo-lede">
+              Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
+            </p>
+            <p className="fo-body">
+              To do this, we built an instrument called Habitat.
+              Habitat is non-generative. It does not predict, recommend, or complete.
+              It measures, and it hands the measurement back to you.
+            </p>
+          </div>
+          <div className="fo-asterisk">
+            Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it is a &ldquo;chart-on-manifold&rdquo; structure that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold in meeting another.
+          </div>
         </div>
         {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
         <footer className="fo-footer">
@@ -143,14 +154,37 @@ export default function FirstObservation() {
         }
 
         .fo-panel {
-          height: 100vh;
+          min-height: 100vh;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           position: relative;
           box-sizing: border-box;
-          overflow: hidden;
+          padding: 64px 0 80px;
+        }
+
+        .fo-content {
+          max-width: 620px;
+          width: 100%;
+          padding: 0 32px;
+          box-sizing: border-box;
+        }
+
+        .fo-figure {
+          margin: 0 0 2.4em;
+        }
+        .fo-hero-img {
+          width: 100%;
+          display: block;
+          border-radius: 2px;
+        }
+        .fo-caption {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.7rem;
+          color: #232a2d80;
+          margin: 0.6em 0 0;
+          text-align: left;
         }
 
         .fo-statement {
@@ -158,10 +192,15 @@ export default function FirstObservation() {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          background: url('/manifold.jpg') no-repeat center center;
-          background-size: cover;
-          border-radius: 4px;
-          padding: 48px 32px;
+        }
+
+        .fo-asterisk {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.9rem;
+          font-weight: 400;
+          line-height: 1.6;
+          color: #232a2d80;
+          margin: 2em 0 0;
         }
         .fo-lede {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -340,7 +379,7 @@ export default function FirstObservation() {
         }
 
         @media (max-width: 768px) {
-          .fo-statement { padding: 0 20px; }
+          .fo-content { padding: 0 20px; }
           .fo-footer { padding-left: 20px; }
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
@@ -350,7 +389,7 @@ export default function FirstObservation() {
           .fo-reply-text { font-size: 1rem; }
         }
         @media (max-width: 480px) {
-          .fo-statement { padding: 0 16px; }
+          .fo-content { padding: 0 16px; }
           .fo-footer { padding-left: 16px; }
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
