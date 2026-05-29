@@ -193,7 +193,7 @@ export default function FirstObservation() {
           justify-content: center;
           position: relative;
           box-sizing: border-box;
-          padding: 80px 0;
+          padding: 140px 0 80px;
         }
 
         .fo-content {
