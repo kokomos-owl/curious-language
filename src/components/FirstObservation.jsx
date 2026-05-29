@@ -60,8 +60,10 @@ export default function FirstObservation() {
 
   return (
     <div className="fo-scroll" ref={scrollRef}>
-      {/* Wordmark */}
-      <div className="fo-wordmark">Curious</div>
+      {/* Header */}
+      <header className="fo-header">
+        <span className="fo-wordmark">Curious</span>
+      </header>
 
       {/* Panel 1 — Statement */}
       <section className="fo-panel fo-hero">
@@ -163,16 +165,24 @@ export default function FirstObservation() {
           background: ${bgColor};
         }
 
-        .fo-wordmark {
+        .fo-header {
           position: fixed;
-          top: 24px;
-          left: 32px;
+          top: 0;
+          left: 0;
+          right: 0;
+          padding: 20px 32px;
+          background: rgba(255, 255, 255, 0.85);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          z-index: 10;
+        }
+
+        .fo-wordmark {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 1.25rem;
           font-weight: 400;
           color: #232a2d;
           letter-spacing: 0.01em;
-          z-index: 10;
         }
 
         .fo-panel {
@@ -436,7 +446,7 @@ export default function FirstObservation() {
             width: 100%;
           }
           .fo-content { padding: 0 20px; }
-          .fo-wordmark { left: 20px; }
+          .fo-header { padding: 20px 20px; }
           .fo-footer { padding-left: 20px; }
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
@@ -447,7 +457,7 @@ export default function FirstObservation() {
         }
         @media (max-width: 480px) {
           .fo-content { padding: 0 16px; }
-          .fo-wordmark { left: 16px; }
+          .fo-header { padding: 20px 16px; }
           .fo-footer { padding-left: 16px; }
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
