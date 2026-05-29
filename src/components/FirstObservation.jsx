@@ -71,7 +71,7 @@ export default function FirstObservation() {
           <div className="fo-hero-row">
             <div className="fo-lede-block">
               <p className="fo-lede">
-                Curious measures language. Specifically, it measures expression: what is said, implied, and unspoken.
+                Curious measures language. Specifically, we measure expression: what is said, implied, and unspoken.
               </p>
             </div>
             <figure className="fo-figure">
@@ -243,9 +243,9 @@ export default function FirstObservation() {
           font-family: "EB Garamond", Georgia, "Times New Roman", serif;
           font-size: 1.9rem;
           font-weight: 400;
-          line-height: 1.35;
+          line-height: 1.25;
           color: #232a2d;
-          margin: 0 0 1.4em;
+          margin: 0 0 0em;
         }
 
         .fo-lede-note {
