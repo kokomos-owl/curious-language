@@ -91,6 +91,10 @@ export default function FirstObservation() {
               Habitat sequesters agents and language models. Your words are never shown.
               This means you can work with models knowing your words remain your own. They're not training data.
             </p>
+            <p className="fo-body">
+              Why do this? Curiosity, creativity, deliberation, and policy make the world.
+              Expression determines its shape.
+            </p>
           </div>
           <div className="fo-asterisk">
             Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it has a &ldquo;chart-on-manifold&rdquo; structure, one that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold.
