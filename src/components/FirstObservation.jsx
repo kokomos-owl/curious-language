@@ -445,6 +445,7 @@ export default function FirstObservation() {
         .fo-fn:focus-within .fo-fn-pop {
           opacity: 1;
           visibility: visible;
+          pointer-events: auto;
         }
         .fo-link {
           color: #bfdcce;
