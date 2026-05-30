@@ -625,9 +625,9 @@ export default function FirstObservation() {
           .fo-body { font-size: 1.2rem; }
           .fo-prologue { font-size: 1rem; }
           .fo-reply-text { font-size: 1rem; }
-          .fo-teeup { font-size: 1.2rem; }
+          .fo-teeup { font-size: 1.45rem; }
           .fo-found-head { font-size: 1.35rem; }
-          .fo-found-body { font-size: 1.2rem; }
+          .fo-found-body { font-size: 1.45rem; }
           .fo-who-row {
             grid-template-columns: 1fr;
             gap: 0.5em;
@@ -646,9 +646,9 @@ export default function FirstObservation() {
           .fo-prologue { font-size: 0.95rem; }
           .fo-reply-text { font-size: 0.95rem; }
           .fo-reply { padding: 1em 1.1em; }
-          .fo-teeup { font-size: 1.15rem; }
+          .fo-teeup { font-size: 1.55rem; }
           .fo-found-head { font-size: 1.25rem; }
-          .fo-found-body { font-size: 1.15rem; }
+          .fo-found-body { font-size: 1.55rem; }
           .fo-who-line { font-size: 1.05rem; }
         }
       `}</style>
