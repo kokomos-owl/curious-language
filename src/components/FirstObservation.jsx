@@ -5,6 +5,26 @@ const CORPUS = 'romeo-juliet';
 const DEMO_ENABLED = false;
 const BG_COLORS = ['#ffffff'];
 
+const WHO_ROWS = [
+  ['Councils, planning boards', "A public process with voices that won't agree", 'Every voice heard. You still decide.'],
+  ['Consulting, strategy, advisory', "A client corpus no one's read whole", 'Read the corpus, not the summary.'],
+  ['Media, newsrooms, journalists', 'A beat where the omission is the story', 'Find the story no one wrote.'],
+  ['Tribal, county, regional bodies', 'Two governing frameworks that must coordinate', "Where your frameworks meet, and don't."],
+  ['Institutions, instructors', 'Student work measured against the curriculum', 'See how far each student traveled.'],
+  ['HR, org development, comms', "Departments that say they're aligned", 'Find the alignment you only claim.'],
+  ['Researchers, foundations, libraries', 'A literature too vast to read whole', 'Map the known and the unsaid.'],
+  ['Writers, thinkers, academics', 'A work that should outlive its platform', 'Publish work that stays your own.'],
+];
+
+function Footnote({ n, children }) {
+  return (
+    <span className="fo-fn" tabIndex={0} role="note" aria-label={`Footnote ${n}`}>
+      <sup className="fo-fn-mark">{n}</sup>
+      <span className="fo-fn-pop">{children}</span>
+    </span>
+  );
+}
+
 export default function FirstObservation() {
   const bgColor = useMemo(() => BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)], []);
   const [corpusText, setCorpusText] = useState(null);
@@ -95,6 +115,29 @@ export default function FirstObservation() {
               Why do this? Curiosity, creativity, deliberation, and policy make the world.
               Expression determines its shape.
             </p>
+          </div>
+          <div className="fo-who">
+            <hr className="fo-rule" />
+            <div className="fo-found">
+              <h2 className="fo-found-head">What we&rsquo;ve found</h2>
+              <p className="fo-found-body">
+                Meaning is not held in the words, or even in the dimensions we chart, but in how they couple &mdash; what creases to what, and what stays slack. Some couplings hold so tightly they move as one<Footnote n="1">transitivity and thematic-role depth &mdash; the grammar of who acts upon whom &mdash; couple so tightly they behave as a single thread, at correlations near 0.97&ndash;0.99.</Footnote>; others spread wide, pulling on everything around them<Footnote n="2">A dimension like animacy couples diffusely &mdash; a hub touching many others at once rather than locking to one.</Footnote>. And the reading is itself a coupling: whoever enters the text enters the same fabric, and acts and asserts through it and beyond it. We held this contour to a blind test<Footnote n="3">A prediction registered in advance and run on ~1,440 compositions of a corpus the instrument had never seen; it held on every count &mdash; including the one band we had predicted could not be resolved &mdash; across writing as far apart as eighteenth-century letters and present-day civic reports.</Footnote>, and it kept its shape &mdash; even where we had said it could not. So the document is not precious; the fabric goes on coupling past the last line, where every actor and every assertion is already expression.
+              </p>
+            </div>
+            <hr className="fo-rule" />
+            <h2 className="fo-found-head">Who does this help?</h2>
+            <p className="fo-teeup">
+              Wherever many voices have to be read and a decision made, something breaks: quiet is lost, dissent becomes consensus, or now a language model takes the words and decides for you. Habitat does none of this. It measures the whole of what was said and hands it back, every expression intact.
+            </p>
+            <div className="fo-who-table">
+              {WHO_ROWS.map(([who, need, line], i) => (
+                <div className="fo-who-row" key={i}>
+                  <div className="fo-who-aud">{who}</div>
+                  <div className="fo-who-need">{need}</div>
+                  <div className="fo-who-line">{line}</div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="fo-asterisk">
             Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it has a &ldquo;chart-on-manifold&rdquo; structure, one that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold.
@@ -288,6 +331,121 @@ export default function FirstObservation() {
           color: #232a2d80;
           margin: 2em 0 2em;
         }
+
+        .fo-who {
+          margin: 3em 0 0;
+        }
+        .fo-rule {
+          border: none;
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          margin: 0 0 2.4em;
+        }
+        .fo-teeup {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 1.3rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #3d301d;
+          margin: 0 0 2em;
+        }
+        .fo-who-table {
+          display: flex;
+          flex-direction: column;
+        }
+        .fo-who-row {
+          display: grid;
+          grid-template-columns: 1fr 1.3fr 1.3fr;
+          gap: 1.6em;
+          align-items: baseline;
+          padding: 1.1em 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .fo-who-row:last-child {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .fo-who-aud {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.95rem;
+          font-weight: 600;
+          line-height: 1.35;
+          color: #232a2d;
+        }
+        .fo-who-need {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.92rem;
+          font-weight: 400;
+          line-height: 1.4;
+          color: #232a2d80;
+        }
+        .fo-who-line {
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+          font-size: 1.15rem;
+          font-weight: 500;
+          line-height: 1.3;
+          color: #232a2d;
+        }
+
+        .fo-found {
+          margin: 0 0 2.4em;
+        }
+        .fo-found-head {
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+          font-size: 1.5rem;
+          font-weight: 500;
+          line-height: 1.2;
+          color: #232a2d;
+          margin: 0 0 0.8em;
+        }
+        .fo-found-body {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 1.3rem;
+          font-weight: 400;
+          line-height: 1.55;
+          color: #3d301d;
+          margin: 0;
+        }
+        .fo-fn {
+          position: relative;
+          cursor: help;
+          outline: none;
+        }
+        .fo-fn-mark {
+          color: #232a2d;
+          font-weight: 600;
+          font-size: 0.62em;
+          vertical-align: super;
+          line-height: 0;
+          padding: 0 2px;
+        }
+        .fo-fn-pop {
+          position: absolute;
+          left: 50%;
+          bottom: 100%;
+          transform: translateX(-50%) translateY(-8px);
+          width: max-content;
+          max-width: min(320px, 80vw);
+          padding: 0.7em 0.9em;
+          background: #232a2d;
+          color: #f1ede6;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.8rem;
+          font-weight: 400;
+          line-height: 1.5;
+          border-radius: 3px;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.18s ease;
+          z-index: 30;
+          pointer-events: none;
+          text-align: left;
+        }
+        .fo-fn:hover .fo-fn-pop,
+        .fo-fn:focus .fo-fn-pop,
+        .fo-fn:focus-within .fo-fn-pop {
+          opacity: 1;
+          visibility: visible;
+        }
         .fo-link {
           color: #bfdcce;
           text-decoration: none;
@@ -466,6 +624,15 @@ export default function FirstObservation() {
           .fo-body { font-size: 1.2rem; }
           .fo-prologue { font-size: 1rem; }
           .fo-reply-text { font-size: 1rem; }
+          .fo-teeup { font-size: 1.2rem; }
+          .fo-found-head { font-size: 1.35rem; }
+          .fo-found-body { font-size: 1.2rem; }
+          .fo-who-row {
+            grid-template-columns: 1fr;
+            gap: 0.5em;
+            padding: 1.2em 0;
+          }
+          .fo-who-line { font-size: 1.1rem; margin-top: 0.1em; }
         }
         @media (max-width: 480px) {
           .fo-content { padding: 0 16px; }
@@ -478,6 +645,10 @@ export default function FirstObservation() {
           .fo-prologue { font-size: 0.95rem; }
           .fo-reply-text { font-size: 0.95rem; }
           .fo-reply { padding: 1em 1.1em; }
+          .fo-teeup { font-size: 1.15rem; }
+          .fo-found-head { font-size: 1.25rem; }
+          .fo-found-body { font-size: 1.15rem; }
+          .fo-who-line { font-size: 1.05rem; }
         }
       `}</style>
     </div>
