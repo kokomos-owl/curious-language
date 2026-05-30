@@ -341,10 +341,10 @@ export default function FirstObservation() {
           margin: 0 0 2.4em;
         }
         .fo-teeup {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.3rem;
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+          font-size: 1.4rem;
           font-weight: 400;
-          line-height: 1.5;
+          line-height: 1.45;
           color: #3d301d;
           margin: 0 0 2em;
         }
@@ -375,7 +375,7 @@ export default function FirstObservation() {
           font-size: 0.92rem;
           font-weight: 400;
           line-height: 1.4;
-          color: #232a2d80;
+          color: #D96543;
         }
         .fo-who-line {
           font-family: "EB Garamond", Georgia, "Times New Roman", serif;
@@ -397,10 +397,10 @@ export default function FirstObservation() {
           margin: 0 0 0.8em;
         }
         .fo-found-body {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.3rem;
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+          font-size: 1.4rem;
           font-weight: 400;
-          line-height: 1.55;
+          line-height: 1.45;
           color: #3d301d;
           margin: 0;
         }
@@ -410,7 +410,7 @@ export default function FirstObservation() {
           outline: none;
         }
         .fo-fn-mark {
-          color: #232a2d;
+          color: #4A8F8C;
           font-weight: 600;
           font-size: 0.62em;
           vertical-align: super;
