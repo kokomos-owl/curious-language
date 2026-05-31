@@ -181,7 +181,6 @@ export default function FirstObservation() {
             <form
               name="contact"
               method="POST"
-              data-netlify="true"
               className="fo-contact"
               onSubmit={handleContactSubmit}
             >
