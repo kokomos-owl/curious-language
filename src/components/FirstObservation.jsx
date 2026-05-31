@@ -765,7 +765,7 @@ export default function FirstObservation() {
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
           .fo-lede { font-size: 1.7rem; }
-          .fo-body { font-size: 1.2rem; }
+          .fo-body { font-size: 1.45rem; }
           .fo-prologue { font-size: 1rem; }
           .fo-reply-text { font-size: 1rem; }
           .fo-teeup { font-size: 1.45rem; }
@@ -798,7 +798,7 @@ export default function FirstObservation() {
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
           .fo-lede { font-size: 1.8rem; }
-          .fo-body { font-size: 1.15rem; }
+          .fo-body { font-size: 1.55rem; }
           .fo-prologue { font-size: 0.95rem; }
           .fo-reply-text { font-size: 0.95rem; }
           .fo-reply { padding: 1em 1.1em; }
