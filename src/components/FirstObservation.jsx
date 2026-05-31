@@ -166,7 +166,7 @@ export default function FirstObservation() {
             </div>
             <hr className="fo-rule" />
             <p className="fo-more">More info? Get in touch below.</p>
-            <p className="fo-found-body">Habitat output is certifiable, auditable and transparent. Just one of the things we haven&rsquo;t told you. ;)</p>
+            <p className="fo-found-body fo-more-note">Habitat output is certifiable, auditable and transparent. Just one of the things we haven&rsquo;t told you. ;)</p>
             <hr className="fo-rule" />
           </div>
           <div className="fo-asterisk">
@@ -414,7 +414,10 @@ export default function FirstObservation() {
           line-height: 1.4;
           color: #3d301d;
           text-align: left;
-          margin: 0 0 1.4em;
+          margin: 0 0 0.6em;
+        }
+        .fo-more-note {
+          margin-bottom: 2.4em;
         }
         .fo-who-table {
           display: flex;
