@@ -164,6 +164,9 @@ export default function FirstObservation() {
                 </div>
               ))}
             </div>
+            <hr className="fo-rule" />
+            <p className="fo-more">More info? Get in touch below.</p>
+            <hr className="fo-rule" />
           </div>
           <div className="fo-asterisk">
             Habitat takes the form of both Euclidean and Riemannian geometry. In geometric terms it has a &ldquo;chart-on-manifold&rdquo; structure, one that measures expression, where point, line and plane meet. Where words meet context, their statement, their trajectory toward another, and their curve, warp and fold.
@@ -402,6 +405,16 @@ export default function FirstObservation() {
           line-height: 1.45;
           color: #3d301d;
           margin: 0 0 2em;
+        }
+        .fo-more {
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+          font-size: 1.1rem;
+          font-style: italic;
+          font-weight: 400;
+          line-height: 1.4;
+          color: #3d301d;
+          text-align: left;
+          margin: 0 0 2.4em;
         }
         .fo-who-table {
           display: flex;
