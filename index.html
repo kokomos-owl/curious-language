@@ -15,6 +15,11 @@
     </style>
   </head>
   <body>
+    <!-- Netlify build-time form detection: the live form is rendered by React and posts to this. -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

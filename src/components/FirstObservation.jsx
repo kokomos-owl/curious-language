@@ -25,6 +25,11 @@ function Footnote({ n, children }) {
   );
 }
 
+const encode = (data) =>
+  Object.keys(data)
+    .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`)
+    .join('&');
+
 export default function FirstObservation() {
   const bgColor = useMemo(() => BG_COLORS[Math.floor(Math.random() * BG_COLORS.length)], []);
   const [corpusText, setCorpusText] = useState(null);
@@ -32,6 +37,8 @@ export default function FirstObservation() {
   const [observeResult, setObserveResult] = useState(null);
   const [observeError, setObserveError] = useState(null);
   const [observing, setObserving] = useState(false);
+  const [email, setEmail] = useState('');
+  const [contactStatus, setContactStatus] = useState('idle');
   const scrollRef = useRef(null);
   const replyRef = useRef(null);
   const startPromise = useRef(null);
@@ -76,6 +83,25 @@ export default function FirstObservation() {
 
   const handleCaretClick = () => {
     scrollRef.current?.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    if (contactStatus === 'sending') return;
+    setContactStatus('sending');
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', email, 'bot-field': '' }),
+      });
+      if (!res.ok) throw new Error(`status ${res.status}`);
+      setContactStatus('sent');
+      setEmail('');
+    } catch (err) {
+      console.error('[contact]', err);
+      setContactStatus('error');
+    }
   };
 
   return (
@@ -148,7 +174,37 @@ export default function FirstObservation() {
         </div>
         {DEMO_ENABLED && <div className="fo-caret" onClick={handleCaretClick}>∨</div>}
         <footer className="fo-footer">
-          <p>Curious Company, LLC © 2026</p>
+          <p className="fo-footer-mark">Curious Company, LLC © 2026</p>
+          {contactStatus === 'sent' ? (
+            <p className="fo-contact-thanks">Thank you &mdash; we&rsquo;ll be in touch.</p>
+          ) : (
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              className="fo-contact"
+              onSubmit={handleContactSubmit}
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="fo-hp">
+                <label>Don&rsquo;t fill this out: <input name="bot-field" /></label>
+              </p>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Get in touch"
+                aria-label="Get in touch with your email"
+                className="fo-contact-input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button type="submit" className="fo-contact-send" disabled={contactStatus === 'sending'}>
+                {contactStatus === 'sending' ? 'Sending\u2026' : 'Send'}
+              </button>
+              {contactStatus === 'error' && <span className="fo-contact-err">Please try again.</span>}
+            </form>
+          )}
         </footer>
       </section>
 
@@ -596,15 +652,73 @@ export default function FirstObservation() {
           position: absolute;
           bottom: 32px;
           left: 0;
-          padding-left: 32px;
+          right: 0;
+          padding: 0 32px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1.5em;
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 0.7rem;
           color: #3e3c3b;
           line-height: 1.6;
         }
-        .fo-footer p {
+        .fo-footer-mark {
           margin: 0;
           color: #232a2d80;
+        }
+        .fo-contact {
+          display: flex;
+          align-items: center;
+          gap: 0.6em;
+        }
+        .fo-hp {
+          display: none;
+        }
+        .fo-contact-input {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.85rem;
+          color: #232a2d;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+          padding: 0.35em 0.2em;
+          width: 200px;
+          max-width: 46vw;
+          outline: none;
+          transition: border-color 0.2s;
+        }
+        .fo-contact-input::placeholder {
+          color: #232a2d80;
+        }
+        .fo-contact-input:focus {
+          border-bottom-color: #4A8F8C;
+        }
+        .fo-contact-send {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.85rem;
+          color: #4A8F8C;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0.35em 0.2em;
+          transition: opacity 0.2s;
+        }
+        .fo-contact-send:hover {
+          opacity: 0.65;
+        }
+        .fo-contact-send:disabled {
+          opacity: 0.4;
+          cursor: default;
+        }
+        .fo-contact-err {
+          color: #D96543;
+          font-size: 0.75rem;
+        }
+        .fo-contact-thanks {
+          margin: 0;
+          font-size: 0.85rem;
+          color: #4A8F8C;
         }
 
         @media (max-width: 768px) {
@@ -618,15 +732,24 @@ export default function FirstObservation() {
           }
           .fo-content { padding: 0 20px; }
           .fo-header { padding: 20px 20px; }
-          .fo-footer { padding-left: 20px; }
+          .fo-footer {
+            position: static;
+            align-self: stretch;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.1em;
+            padding: 3em 20px 2.5em;
+          }
+          .fo-contact { width: 100%; }
+          .fo-contact-input { flex: 1; width: auto; max-width: none; }
           .fo-demo-inner { padding: 0 20px; }
           .fo-reply-inner { padding: 0 20px; }
-          .fo-lede { font-size: 1.45rem; }
+          .fo-lede { font-size: 1.7rem; }
           .fo-body { font-size: 1.2rem; }
           .fo-prologue { font-size: 1rem; }
           .fo-reply-text { font-size: 1rem; }
           .fo-teeup { font-size: 1.45rem; }
-          .fo-found-head { font-size: 1.35rem; }
+          .fo-found-head { font-size: 1.6rem; }
           .fo-found-body { font-size: 1.45rem; }
           .fo-who-row {
             grid-template-columns: 1fr;
@@ -638,16 +761,16 @@ export default function FirstObservation() {
         @media (max-width: 480px) {
           .fo-content { padding: 0 16px; }
           .fo-header { padding: 20px 16px; }
-          .fo-footer { padding-left: 16px; }
+          .fo-footer { padding: 3em 16px 2.5em; }
           .fo-demo-inner { padding: 0 16px; }
           .fo-reply-inner { padding: 0 16px; }
-          .fo-lede { font-size: 1.3rem; }
+          .fo-lede { font-size: 1.8rem; }
           .fo-body { font-size: 1.15rem; }
           .fo-prologue { font-size: 0.95rem; }
           .fo-reply-text { font-size: 0.95rem; }
           .fo-reply { padding: 1em 1.1em; }
           .fo-teeup { font-size: 1.55rem; }
-          .fo-found-head { font-size: 1.25rem; }
+          .fo-found-head { font-size: 1.65rem; }
           .fo-found-body { font-size: 1.55rem; }
           .fo-who-line { font-size: 1.05rem; }
         }
