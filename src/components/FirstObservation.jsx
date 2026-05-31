@@ -778,6 +778,18 @@ export default function FirstObservation() {
             padding: 1.2em 0;
           }
           .fo-who-line { font-size: 1.1rem; margin-top: 0.1em; }
+          .fo-fn-pop {
+            position: fixed;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            top: auto;
+            transform: none;
+            width: auto;
+            max-width: none;
+            font-size: 0.95rem;
+            padding: 1em 1.1em;
+          }
         }
         @media (max-width: 480px) {
           .fo-content { padding: 0 16px; }
