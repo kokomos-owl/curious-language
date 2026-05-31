@@ -166,7 +166,7 @@ export default function FirstObservation() {
             </div>
             <hr className="fo-rule" />
             <p className="fo-more">Curious? Get in touch below.</p>
-            <p className="fo-more-body">We're building out. And, Habitat output is certifiable, auditable and transparent. Two things we're just now sharing. ;)</p>
+            <p className="fo-more-body fo-more-body-tight">We're building out. And, Habitat output is certifiable, auditable and transparent. Two things we're just now sharing. ;)</p>
             <p className="fo-more-body">Read: <a href="https://drive.google.com/file/d/1QRrwZP_0XSZfDxiz19wI-LH11IpUHo61/view?usp=drive_link" target="_blank" rel="noopener noreferrer">"A letter on what we built, and why now"</a>.</p>
             <hr className="fo-rule" />
           </div>
@@ -424,6 +424,9 @@ export default function FirstObservation() {
           line-height: 1.45;
           color: #3d301d;
           margin: 0 0 2.5em;
+        }
+        .fo-more-body-tight {
+          margin: 0 0 0.6em;
         }
         .fo-who-table {
           display: flex;
