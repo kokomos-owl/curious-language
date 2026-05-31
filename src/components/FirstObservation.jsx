@@ -422,7 +422,7 @@ export default function FirstObservation() {
           font-weight: 400;
           line-height: 1.45;
           color: #3d301d;
-          margin: 0 0 1.4rem;
+          margin: 0 0 2.7rem;
         }
         .fo-who-table {
           display: flex;
