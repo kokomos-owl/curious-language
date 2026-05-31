@@ -408,13 +408,12 @@ export default function FirstObservation() {
         }
         .fo-more {
           font-family: "EB Garamond", Georgia, "Times New Roman", serif;
-          font-size: 1.1rem;
-          font-style: italic;
+          font-size: 1.75rem;
           font-weight: 400;
           line-height: 1.4;
           color: #3d301d;
           text-align: left;
-          margin: 0 0 2.4em;
+          margin: 0 0 1.4em;
         }
         .fo-who-table {
           display: flex;
@@ -763,7 +762,7 @@ export default function FirstObservation() {
           .fo-teeup { font-size: 1.45rem; }
           .fo-found-head { font-size: 1.6rem; }
           .fo-found-body { font-size: 1.45rem; }
-          .fo-more { font-size: 1.15rem; }
+          .fo-more { font-size: 1.8rem; }
           .fo-who-row {
             grid-template-columns: 1fr;
             gap: 0.5em;
@@ -785,7 +784,7 @@ export default function FirstObservation() {
           .fo-teeup { font-size: 1.55rem; }
           .fo-found-head { font-size: 1.65rem; }
           .fo-found-body { font-size: 1.55rem; }
-          .fo-more { font-size: 1.2rem; }
+          .fo-more { font-size: 1.9rem; }
           .fo-who-line { font-size: 1.05rem; }
         }
       `}</style>
