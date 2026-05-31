@@ -166,7 +166,7 @@ export default function FirstObservation() {
             </div>
             <hr className="fo-rule" />
             <p className="fo-more">More info? Get in touch below.</p>
-            <p className="fo-more-body">We're building out. And, Habitat output is certifiable, auditable and transparent. Just two things we're just now sharing. ;)</p>
+            <p className="fo-more-body">We're building out. And, Habitat output is certifiable, auditable and transparent. Two things we're just now sharing. ;)</p>
             <hr className="fo-rule" />
           </div>
           <div className="fo-asterisk">
