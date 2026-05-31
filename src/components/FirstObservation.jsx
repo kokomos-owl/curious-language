@@ -167,7 +167,7 @@ export default function FirstObservation() {
             <hr className="fo-rule" />
             <p className="fo-more">Curious? Get in touch below.</p>
             <p className="fo-more-body fo-more-body-tight">We're building out. And, Habitat output is certifiable, auditable and transparent. Two things we're just now sharing. ;)</p>
-            <p className="fo-more-body fo-more-body-tight">Curious implements through our nonprofit partner, <a href="https://www.habitatfdn.org/" target="_blank" rel="noopener noreferrer">Habitat Foundation, a 501(c)(3) and 509(a)(2) public charity</a>.</p>
+            <p className="fo-more-body fo-more-body-tight">Curious implements through our nonprofit partner, <a href="https://www.habitatfdn.org/" target="_blank" rel="noopener noreferrer">Habitat Foundation</a>, a 501(c)(3) and 509(a)(2) public charity.</p>
 
             <p className="fo-more-body">Read: <a href="https://drive.google.com/file/d/1QRrwZP_0XSZfDxiz19wI-LH11IpUHo61/view?usp=drive_link" target="_blank" rel="noopener noreferrer">"A letter on what we built, and why now"</a>.</p>
             <hr className="fo-rule" />
