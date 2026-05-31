@@ -763,6 +763,7 @@ export default function FirstObservation() {
           .fo-teeup { font-size: 1.45rem; }
           .fo-found-head { font-size: 1.6rem; }
           .fo-found-body { font-size: 1.45rem; }
+          .fo-more { font-size: 1.15rem; }
           .fo-who-row {
             grid-template-columns: 1fr;
             gap: 0.5em;
@@ -784,6 +785,7 @@ export default function FirstObservation() {
           .fo-teeup { font-size: 1.55rem; }
           .fo-found-head { font-size: 1.65rem; }
           .fo-found-body { font-size: 1.55rem; }
+          .fo-more { font-size: 1.2rem; }
           .fo-who-line { font-size: 1.05rem; }
         }
       `}</style>
