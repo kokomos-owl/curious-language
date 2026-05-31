@@ -777,7 +777,9 @@ export default function FirstObservation() {
             gap: 0.5em;
             padding: 1.2em 0;
           }
-          .fo-who-line { font-size: 1.1rem; margin-top: 0.1em; }
+          .fo-who-aud { font-size: 1.1rem; }
+          .fo-who-need { font-size: 1.05rem; }
+          .fo-who-line { font-size: 1.3rem; margin-top: 0.1em; }
           .fo-fn-pop {
             position: fixed;
             left: 16px;
@@ -806,7 +808,9 @@ export default function FirstObservation() {
           .fo-found-head { font-size: 1.65rem; }
           .fo-found-body { font-size: 1.55rem; }
           .fo-more { font-size: 1.9rem; }
-          .fo-who-line { font-size: 1.05rem; }
+          .fo-who-aud { font-size: 1.15rem; }
+          .fo-who-need { font-size: 1.1rem; }
+          .fo-who-line { font-size: 1.35rem; }
         }
       `}</style>
     </div>
