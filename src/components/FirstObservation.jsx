@@ -166,6 +166,7 @@ export default function FirstObservation() {
             </div>
             <hr className="fo-rule" />
             <p className="fo-more">More info? Get in touch below.</p>
+            <p className="fo-found-body">Habitat output is certifiable, auditable and transparent. Just one of the things we haven&rsquo;t told you. ;)</p>
             <hr className="fo-rule" />
           </div>
           <div className="fo-asterisk">
