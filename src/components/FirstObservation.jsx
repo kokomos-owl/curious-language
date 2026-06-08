@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { observeStart, observeDrop, observeCorpusText } from '../api/habitat';
 
 const CORPUS = 'romeo-juliet';
@@ -108,7 +109,13 @@ export default function FirstObservation() {
     <div className="fo-scroll" ref={scrollRef}>
       {/* Header */}
       <header className="fo-header">
-        <span className="fo-wordmark">Curious</span>
+        <div className="fo-brand">
+          {/* wordmark zone — drop the SVG here later */}
+          <span className="fo-wordmark">Curious</span>
+        </div>
+        <nav className="fo-nav">
+          <Link className="fo-navlink" to="/habitat">Habitat</Link>
+        </nav>
       </header>
 
       {/* Panel 1 — Statement */}
@@ -278,25 +285,36 @@ export default function FirstObservation() {
           background: ${bgColor};
         }
 
+        /* Identical to the Habitat page header (.hp-*): static atop the scroll
+           container, so it sits a touch lower and clears the scrollbar. */
         .fo-header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          padding: 20px 32px;
-          background: rgba(255, 255, 255, 0.85);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.5rem 2rem;
         }
+
+        /* brand zone — its own segment, ready for an SVG wordmark */
+        .fo-brand { display: flex; align-items: center; }
 
         .fo-wordmark {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 1.25rem;
-          font-weight: 400;
-          color: #232a2d;
-          letter-spacing: 0.01em;
+          font-weight: 600;
+          font-size: 1rem;
+          letter-spacing: 0.02em;
+          color: #1a1a1a;
         }
+
+        .fo-nav { display: flex; gap: 1.4rem; align-items: center; }
+        .fo-navlink {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.95rem;
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          color: #1a1a1a;
+          text-decoration: none;
+        }
+        .fo-navlink:hover { color: #b65a36; }
 
         .fo-panel {
           min-height: 100vh;

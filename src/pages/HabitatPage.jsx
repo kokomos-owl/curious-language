@@ -14,7 +14,13 @@ export default function HabitatPage() {
   return (
     <div className="hp-scroll">
       <header className="hp-header">
-        <Link className="hp-wordmark" to="/">Curious</Link>
+        <div className="hp-brand">
+          {/* wordmark zone — drop the SVG here later */}
+          <Link className="hp-wordmark" to="/">Curious</Link>
+        </div>
+        <nav className="hp-nav">
+          <Link className="hp-navlink" to="/habitat">Habitat</Link>
+        </nav>
       </header>
 
       <main className="hp-main">
@@ -153,7 +159,14 @@ export default function HabitatPage() {
           background: #ffffff;
           color: #1a1a1a;
         }
-        .hp-header { padding: 1.5rem 2rem; }
+        .hp-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.5rem 2rem;
+        }
+        /* brand zone — its own segment, ready for an SVG wordmark */
+        .hp-brand { display: flex; align-items: center; }
         .hp-wordmark {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-weight: 600;
@@ -162,6 +175,16 @@ export default function HabitatPage() {
           color: #1a1a1a;
           text-decoration: none;
         }
+        .hp-nav { display: flex; gap: 1.4rem; align-items: center; }
+        .hp-navlink {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 0.95rem;
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          color: #1a1a1a;
+          text-decoration: none;
+        }
+        .hp-navlink:hover { color: #b65a36; }
         .hp-main { max-width: 40rem; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
         .hp-kicker {
           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
