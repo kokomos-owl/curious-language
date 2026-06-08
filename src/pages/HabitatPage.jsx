@@ -203,7 +203,7 @@ export default function HabitatPage() {
         }
         .hp-lede {
           font-family: "EB Garamond", Georgia, serif;
-          font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+          font-size: 1.39rem;
           font-weight: 500;
           line-height: 1.5;
           color: #2a2a2a;
@@ -225,9 +225,10 @@ export default function HabitatPage() {
         }
         .hp-body {
           font-family: "EB Garamond", Georgia, serif;
-          font-size: 1.22rem;
+          font-size: 1.23rem;
+          font-weight: 500;
           line-height: 1.62;
-          color: #2e2a24;
+          color: rgb(64, 70, 74);
           margin-bottom: 1.05rem;
         }
         .hp-body strong { font-weight: 600; color: #1a1a1a; }
