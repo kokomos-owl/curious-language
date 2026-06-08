@@ -394,10 +394,11 @@ export default function FirstObservation() {
           align-items: flex-start;
         }
 
+
         .fo-body {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: "EB Garamond", Georgia, "Times New Roman", serif;
           font-size: 1.3rem;
-          font-weight: 400;
+          font-weight: 500;
           line-height: 1.5;
           color: #3d301d;
           margin: 0 0 1.4em;
